@@ -60,9 +60,14 @@ const Loader = styled.div`
   }
 `;
 
+interface QuizzData {
+  id: number;
+  question: string;
+}
+
 export default function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
-  const [quizzData, setQuizzData] = useState(null);
+  const [quizzData, setQuizzData] = useState<QuizzData | null>(null);
 
   useEffect(() => {
     if (!LoginStorage.isLoggedIn()) {
@@ -73,9 +78,11 @@ export default function Page({ params }: { params: { id: string } }) {
   useEffect(() => {
     fetch('/quizz.json')
       .then(response => response.json())
-      .then(data => {
-        const quizz = data.find((q: any) => q.id === parseInt(params.id));
-        setQuizzData(quizz);
+      .then((data: QuizzData[]) => {
+        const quizz = data.find((q: QuizzData) => q.id === parseInt(params.id));
+        if (quizz) {
+          setQuizzData(quizz);
+        }
       });
   }, [params.id]);
 

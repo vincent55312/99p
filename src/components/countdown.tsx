@@ -20,7 +20,7 @@ const TimerText = styled.text`
   dominant-baseline: middle;
 `;
 
-const RoundTimer = ({ onEnd }) => {
+const RoundTimer = ({ onEnd }: { onEnd: () => void }) => {
   const duration = 90;
   const initialColor = '#00FF00';
   const warningColor = '#FFA500';
