@@ -2,25 +2,26 @@
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { LoginStorage } from "@/lib/localstorage-service";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Header from "@/components/header";
 import colors from "@/app/styles/globals.module.scss";
 import anime from "animejs";
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   position: relative;
   background-color: ${colors.colorBackground};
   color: ${colors.colorText};
+  padding: 20px;
 `;
 
 const CardsGrid = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   padding: 20px;
 `;
@@ -36,15 +37,30 @@ const Card = styled.div`
   font-size: 1.5rem;
   text-align: center;
   color: ${colors.colorText};
-  width: 18rem;
-  height: 18rem;
+  flex: 1 1 calc(30% - 2rem);
+  max-width: 18rem;
+  min-width: 10rem;
+  aspect-ratio: 1 / 1;
+
+  @media (max-width: 768px) {
+    flex: 1 1 calc(45% - 2rem);
+  }
+  
+  @media (max-width: 480px) {
+    flex: 1 1 calc(100% - 2rem);
+  }
 `;
 
 const ChooseText = styled.div`
-  grid-column: span 3;
   text-align: center;
   font-size: 2rem;
   color: ${colors.colorText};
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default function StartQuizz() {
@@ -77,19 +93,19 @@ export default function StartQuizz() {
     console.log(`Card ${cardNumber} clicked`);
   };
 
+  const handleCard2Click = () => {
+    router.push("/rules-q2");
+  };
+
   return (
     <>      
       <Container>
+        <ChooseText>Choisissez votre quizz 😃</ChooseText>
         <CardsGrid>
           <Card onClick={() => handleCardClick(1)}>Culture générale</Card>
-          <Card onClick={() => handleCardClick(2)}>Calculs commerciaux</Card>
+          <Card onClick={() => handleCard2Click()}>Calculs commerciaux</Card>
           <Card onClick={() => handleCardClick(3)}>Négociation</Card>
-          </CardsGrid>
-        <CardsGrid>
-        <ChooseText>Choisissez votre quizz 😃</ChooseText>
-        </CardsGrid>
-        <CardsGrid>
-        <Card onClick={() => handleCardClick(4)}>Petit rappel</Card>
+          <Card onClick={() => handleCardClick(4)}>Petit rappel</Card>
           <Card onClick={() => handleCardClick(5)}>CEJM</Card>
           <Card onClick={() => handleCardClick(6)}>Digitalisation</Card>
         </CardsGrid>

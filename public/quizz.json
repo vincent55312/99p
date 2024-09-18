@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "Quelle est la capitale de la France ?",
+    "answer": "Paris"
+  },
+  {
+    "id": 2,
+    "question": "Combien font 5 + 7 ?",
+    "answer": "12"
+  },
+  {
+    "id": 3,
+    "question": "Quel est le plus grand océan du monde ?",
+    "answer": "Océan Pacifique"
+  },
+  {
+    "id": 4,
+    "question": "Qui a écrit 'Les Misérables' ?",
+    "answer": "Victor Hugo"
+  },
+  {
+    "id": 5,
+    "question": "Quelle est la formule chimique de l'eau ?",
+    "answer": "H2O"
+  }
+]
