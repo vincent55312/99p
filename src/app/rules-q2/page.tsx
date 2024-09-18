@@ -9,6 +9,11 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -19,6 +24,7 @@ const Title = styled.h1`
 
   @media (max-width: 480px) {
     font-size: 1.5rem;
+    padding-top: 2rem;
   }
 `;
 
@@ -31,6 +37,10 @@ const Content = styled.div`
   margin: auto;
   padding: 20px;
   border-radius: 0.5rem;
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 const ContentButton = styled.div`
@@ -40,6 +50,10 @@ const ContentButton = styled.div`
   align-items: center;
   margin: auto;
   padding: 20px;
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 const GoButton = styled.button`
@@ -55,12 +69,19 @@ const GoButton = styled.button`
   @media (max-width: 480px) {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
+    margin: 1rem;
   }
 `;
 
 const Question = styled.li`
-    font-size: 30px;
-    color: black;
+  font-size: 20px;
+  color: black;
+  margin: 10px 0;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+    margin: 5px 0;
+  }
 `;
 
 export default function RulesPage() {

@@ -21,7 +21,7 @@ const TimerText = styled.text`
 `;
 
 const RoundTimer = ({ onEnd }: { onEnd: () => void }) => {
-  const duration = 90;
+  const duration = 10;
   const initialColor = '#00FF00';
   const warningColor = '#FFA500';
   const dangerColor = '#FF0000';
@@ -45,9 +45,9 @@ const RoundTimer = ({ onEnd }: { onEnd: () => void }) => {
   }, [onEnd]);
 
   useEffect(() => {
-    if (remainingTime === 60) {
+    if (remainingTime === 5) {
       setColor(warningColor);
-    } else if (remainingTime === 20) {
+    } else if (remainingTime === 2) {
       setColor(dangerColor);
     }
   }, [remainingTime]);

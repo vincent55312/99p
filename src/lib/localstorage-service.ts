@@ -56,4 +56,26 @@ class LoginStorage {
   }
 }
 
-export { LoginStorage, LocalStorageService };
+class QuizzScoreStorage {
+  static addScoreTeamA(questionId: number): void {
+    const scores = LocalStorageService.getItem('scores') || { teamA: [], teamB: [] };
+    scores.teamA.push(questionId);
+    LocalStorageService.setItem('scores', scores);
+  }
+
+  static addScoreTeamB(questionId: number): void {
+    const scores = LocalStorageService.getItem('scores') || { teamA: [], teamB: [] };
+    scores.teamB.push(questionId);
+    LocalStorageService.setItem('scores', scores);
+  }
+
+  static getScores(): { teamA: number[], teamB: number[] } {
+    return LocalStorageService.getItem('scores') || { teamA: [], teamB: [] };
+  }
+
+  static clearScores(): void {
+    LocalStorageService.removeItem('scores');
+  }
+}
+
+export { LoginStorage, LocalStorageService, QuizzScoreStorage };
