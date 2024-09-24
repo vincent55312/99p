@@ -9,7 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Dummy authentication logic for demonstration purposes
-  if (username === 'aurore' && password === 'elsa') {
+  if (username === 'admin' && password === 'admin') {
     return res.status(200).json({ message: 'Connexion réussie!' });
   } else {
     return res.status(401).json({ error: 'Nom d\'utilisateur ou mot de passe incorrect.' });
