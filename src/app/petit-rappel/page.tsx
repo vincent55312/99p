@@ -104,7 +104,7 @@ export default function ReminderPage() {
   }, [router]);
 
   const handleGoClick = () => {
-    router.push("/quizz/1");
+    router.push("/rules-q2");
   };
 
   return (
@@ -121,7 +121,7 @@ export default function ReminderPage() {
         <Formula>PVTTC : PAHT X COEFFICIENT MULTIPLICATEUR</Formula>
       </Content>
       <ContentButton>
-        <GoButton onClick={handleGoClick}>Commencer</GoButton>
+        <GoButton onClick={handleGoClick}>Aller au quizz commercial</GoButton>
       </ContentButton>
     </Container>
   );
