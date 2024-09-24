@@ -44,6 +44,8 @@ const Question = styled.li`
   margin: 1rem 0;
   list-style: none;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  max-width: 60%;
+  text-align: center;
 `;
 
 const Loader = styled.div`
@@ -94,11 +96,10 @@ export default function Page({ params }: { params: { id: string } }) {
     <Container>
       <Title>Question {params.id}</Title>
       <Content>
-      <RoundTimer onEnd={handleCountdownEnd}/>
       <Question>
           {quizzData ? quizzData.question : <Loader />}
         </Question>
-
+        <RoundTimer onEnd={handleCountdownEnd}/>
       </Content>
     </Container>
   );

@@ -1,27 +1,152 @@
 [
   {
     "id": 1,
-    "question": "Quelle est la capitale de la France ?",
-    "answer": "Paris"
+    "question": "Quelle est la formule pour calculer le prix de vente toutes taxes comprises (PVTTC) ?",
+    "answer": "PVTTC = PAHT x (1 + taux de TVA)"
   },
   {
     "id": 2,
-    "question": "Combien font 5 + 7 ?",
-    "answer": "12"
+    "question": "Comment calcule-t-on le prix de vente toutes taxes comprises (PVTTC) à partir du prix hors taxes (PAHT) et du coefficient multiplicateur ?",
+    "answer": "PAHT x coefficient multiplicateur = PVTTC"
   },
   {
     "id": 3,
-    "question": "Quel est le plus grand océan du monde ?",
-    "answer": "Océan Pacifique"
+    "question": "Quelle est la formule pour calculer le prix hors vente toutes taxes (PHVT) à partir du prix d'achat hors taxes (PAHT) ?",
+    "answer": "PHVT = PAHT / coefficient multiplicateur"
   },
   {
     "id": 4,
-    "question": "Qui a écrit 'Les Misérables' ?",
-    "answer": "Victor Hugo"
+    "question": "Quel est le plus grand désert du monde ?",
+    "answer": "Le plus grand désert du monde est le désert de l'Antarctique."
   },
   {
     "id": 5,
-    "question": "Quelle est la formule chimique de l'eau ?",
-    "answer": "H2O"
+    "question": "À quel pourcentage de TVA correspond un coefficient de 1,10 ?",
+    "answer": "1,10 correspond à 10% de TVA."
+  },
+  {
+    "id": 6,
+    "question": "Comment exprimer 20% en décimal ?",
+    "answer": "20% = 0,20 en décimal."
+  },
+  {
+    "id": 7,
+    "question": "Quel taux de TVA correspond à un coefficient de 1,055 ?",
+    "answer": "1,055 correspond à 5,5% de TVA."
+  },
+  {
+    "id": 8,
+    "question": "Quel est l'océan le plus vaste du monde ?",
+    "answer": "L'océan le plus vaste est l'océan Pacifique."
+  },
+  {
+    "id": 9,
+    "question": "Quelle formule utiliser pour obtenir le prix hors vente toutes taxes (PHVT) à partir du PVTTC ?",
+    "answer": "PHVT = PVTTC / coefficient multiplicateur"
+  },
+  {
+    "id": 10,
+    "question": "Quelle est la capitale de l'Espagne ?",
+    "answer": "La capitale de l'Espagne est Madrid."
+  },
+  {
+    "id": 11,
+    "question": "Comment convertir 20% en coefficient multiplicateur ?",
+    "answer": "20% en coefficient multiplicateur = 1,20"
+  },
+  {
+    "id": 12,
+    "question": "Qui a peint la Joconde ?",
+    "answer": "La Joconde a été peinte par Léonard de Vinci."
+  },
+  {
+    "id": 13,
+    "question": "Comment obtenir le prix d'achat hors taxes (PAHT) à partir du PVTTC ?",
+    "answer": "Le prix de vente hors taxes (PAHT) est obtenu en divisant le PVTTC par 1 + taux de TVA."
+  },
+  {
+    "id": 14,
+    "question": "Comment calculer le prix d'achat hors taxes (PAHT) si le coefficient multiplicateur est de 1.2 ?",
+    "answer": "PAHT = PVTTC / 1.2 si le coefficient est 1.2"
+  },
+  {
+    "id": 15,
+    "question": "Quelle est la plus grande planète du système solaire ?",
+    "answer": "La plus grande planète du système solaire est Jupiter."
+  },
+  {
+    "id": 16,
+    "question": "Quel est le plus haut sommet du monde ?",
+    "answer": "Le plus haut sommet du monde est l'Everest."
+  },
+  {
+    "id": 17,
+    "question": "Quel coefficient utiliser pour convertir un prix hors taxes (HT) en prix toutes taxes comprises (TTC) ?",
+    "answer": "Coefficient multiplicateur = 1 + taux de TVA"
+  },
+  {
+    "id": 18,
+    "question": "Quel est le pays le plus peuplé du monde ?",
+    "answer": "Le pays le plus peuplé du monde est la Chine."
+  },
+  {
+    "id": 19,
+    "question": "Quel animal est surnommé 'le roi de la jungle' ?",
+    "answer": "Le roi de la jungle est le lion."
+  },
+  {
+    "id": 20,
+    "question": "Quelle est la langue la plus parlée dans le monde ?",
+    "answer": "La langue la plus parlée dans le monde est le chinois (mandarin)."
+  },
+  {
+    "id": 21,
+    "question": "Combien y a-t-il de jours dans une année bissextile ?",
+    "answer": "Une année bissextile a 366 jours."
+  },
+  {
+    "id": 22,
+    "question": "De quel pays Tokyo est-elle la capitale ?",
+    "answer": "Tokyo est la capitale du Japon."
+  },
+  {
+    "id": 23,
+    "question": "Quel est l'animal le plus rapide du monde ?",
+    "answer": "L’animal le plus rapide est le guépard."
+  },
+  {
+    "id": 24,
+    "question": "Quel pays est surnommé 'le pays du Soleil-Levant' ?",
+    "answer": "Le pays du Soleil-Levant est le Japon."
+  },
+  {
+    "id": 25,
+    "question": "Quel est le fleuve le plus long du monde ?",
+    "answer": "Le fleuve le plus long du monde est le Nil."
+  },
+  {
+    "id": 26,
+    "question": "Quelle est la monnaie utilisée au Japon ?",
+    "answer": "La monnaie utilisée au Japon est le yen."
+  },
+  {
+    "id": 27,
+    "question": "Quel est le plus grand pays d'Amérique du Sud ?",
+    "answer": "Le plus grand pays d'Amérique du Sud est le Brésil."
+  },
+  {
+    "id": 28,
+    "question": "Quelle est la plus petite planète du système solaire ?",
+    "answer": "La plus petite planète du système solaire est Mercure."
+  },
+  {
+    "id": 29,
+    "question": "Dans quel pays peut-on visiter le Colisée ?",
+    "answer": "Le Colisée est situé en Italie."
+  },
+  {
+    "id": 30,
+    "question": "Quelle est la plus grande forêt tropicale du monde ?",
+    "answer": "La plus grande forêt tropicale du monde est la forêt amazonienne."
   }
 ]

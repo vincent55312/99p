@@ -5,6 +5,7 @@ import colors from "@/app/styles/globals.module.scss";
 import { LoginStorage, QuizzScoreStorage } from "@/lib/localstorage-service";
 import { useEffect, useState } from "react";
 import anime from "animejs";
+import confetti from "canvas-confetti";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -55,49 +56,6 @@ const TableCell = styled.td`
   text-align: center;
 `;
 
-const MathBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-`;
-
-const generateRandomPosition = () => {
-  const top = Math.random() * 100;
-  const left = Math.random() * 100;
-  return { top: `${top}%`, left: `${left}%` };
-};
-
-const generateRandomAnimation = () => {
-  const direction = Math.random() > 0.5 ? 1 : -1;
-  const duration = Math.random() * 20 + 10;
-  const translateX = direction * (Math.random() * 200 - 100);
-  const translateY = direction * (Math.random() * 200 - 100);
-  return keyframes`
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(${translateX}vw, ${translateY}vh); }
-  `;
-};
-
-const generateRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
-
-const MathFormula = styled.div`
-  position: absolute;
-  font-size: 1.5rem;
-  color: ${generateRandomColor};
-  animation: ${generateRandomAnimation} 10s linear infinite;
-`;
-
 const ReplayButton = styled.button`
   padding: 1rem 2rem;
   margin-top: 2rem;
@@ -113,29 +71,6 @@ const ReplayButton = styled.button`
     padding: 0.75rem 1.5rem;
   }
 `;
-
-const formulas = [
-  "E = mc^2",
-  "a^2 + b^2 = c^2",
-  "F = ma",
-  "V = IR",
-  "P = IV",
-  "Δx = v0t + 1/2at^2",
-  "λ = h/p",
-  "pV = nRT",
-  "∫f(x)dx = F(x) + C",
-  "i^2 = -1",
-  "sin(θ) = opp/hyp",
-  "cos(θ) = adj/hyp",
-  "tan(θ) = opp/adj",
-  "e^(iπ) + 1 = 0",
-  "∇·E = ρ/ε₀",
-  "∇×B - (1/c²)∂E/∂t = μ₀J",
-  "∇·B = 0",
-  "∇×E + ∂B/∂t = 0",
-  "E = hf",
-  "ΔS ≥ 0"
-];
 
 export default function Page() {
   const router = useRouter();
@@ -167,28 +102,33 @@ export default function Page() {
     });
   }, []);
 
+  useEffect(() => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+    const confettiInterval = setInterval(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }, 2000);
+
+    return () => clearInterval(confettiInterval);
+  }, []);
+
   const handleReplay = () => {
     QuizzScoreStorage.clearScores();
     router.push("/welcome");
   };
 
+  const winningTeam = scores.teamA.length > scores.teamB.length ? "Equipe A" : "Equipe B";
+
   return (
     <Container>
-      <MathBackground>
-        {formulas.map((formula, index) => {
-          const { top, left } = generateRandomPosition();
-          return (
-            <MathFormula
-              key={index}
-              style={{ top, left, color: generateRandomColor() }}
-              className="math-formula"
-            >
-              {formula}
-            </MathFormula>
-          );
-        })}
-      </MathBackground>
-      <Title>Récapitulatif des scores</Title>
+      <Title>Bravo à l'équipe victorieuse : {winningTeam} !</Title>
       <Content>
         <Table>
           <thead>
@@ -208,6 +148,7 @@ export default function Page() {
             </tr>
           </tbody>
         </Table>
+
         <ReplayButton onClick={handleReplay}>Rejouer</ReplayButton>
       </Content>
     </Container>

@@ -9,7 +9,6 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
   background-color: ${colors.colorBackground};
   color: ${colors.colorText};
 
@@ -24,7 +23,7 @@ const Title = styled.h1`
   text-align: center;
   color: ${colors.colorPrimary};
   font-weight: bold;
-
+  padding-bottom: 2rem;
   @media (max-width: 480px) {
     font-size: 2rem;
     padding-top: 2rem;
@@ -44,6 +43,18 @@ const Content = styled.div`
 
   @media (max-width: 480px) {
     padding: 15px;
+  }
+`;
+
+const Formula = styled.li`
+  font-size: 1.2rem;
+  color: ${colors.colorText};
+  margin: 10px 0;
+  font-weight: bold;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    margin: 5px 0;
   }
 `;
 
@@ -84,19 +95,7 @@ const GoButton = styled.button`
   }
 `;
 
-const Question = styled.li`
-  font-size: 1.5rem;
-  color: ${colors.colorText};
-  margin: 10px 0;
-  font-weight: bold;
-
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-    margin: 5px 0;
-  }
-`;
-
-export default function RulesPage() {
+export default function ReminderPage() {
   const router = useRouter();
   useEffect(() => {
     if (!LoginStorage.isLoggedIn()) {
@@ -110,14 +109,16 @@ export default function RulesPage() {
 
   return (
     <Container>
-      <Title>Règles du jeu</Title>
+      <Title>Rappel Formules</Title>
       <Content>
-        <Question>Equipe A contre Equipe B</Question>
-        <Question>30 questions</Question>
-        <Question>Chaque personne devra répondre à 5 questions avant de switcher avec une personne de son équipe</Question>
-        <Question>1m30 pour répondre</Question>
-        <Question>Vous gagnez des points à chaque bonne réponse</Question>
-        <Question>L'équipe qui gagne le plus de questions remporte la partie</Question>
+        <Formula>TVA 20 % devient 1.20</Formula>
+        <Formula>TVA 10% devient 1.10</Formula>
+        <Formula>TVA 5.5 % devient 1.055</Formula>
+        <Formula>TVA à 20%</Formula>
+        <Formula>PVHT : PVTTC / TVA (1.20)</Formula>
+        <Formula>PVHT : PVHT + Marge</Formula>
+        <Formula>PVTTC : PVHT X TVA (1.20)</Formula>
+        <Formula>PVTTC : PAHT X COEFFICIENT MULTIPLICATEUR</Formula>
       </Content>
       <ContentButton>
         <GoButton onClick={handleGoClick}>Commencer</GoButton>

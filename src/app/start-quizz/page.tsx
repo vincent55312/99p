@@ -97,6 +97,9 @@ export default function StartQuizz() {
     router.push("/rules-q2");
   };
 
+  const handleCard3Click = () => {
+    router.push("/petit-rappel");
+  };
   return (
     <>      
       <Container>
@@ -105,7 +108,7 @@ export default function StartQuizz() {
           <Card onClick={() => handleCardClick(1)}>Culture générale</Card>
           <Card onClick={() => handleCard2Click()}>Calculs commerciaux</Card>
           <Card onClick={() => handleCardClick(3)}>Négociation</Card>
-          <Card onClick={() => handleCardClick(4)}>Petit rappel</Card>
+          <Card onClick={() => handleCard3Click()}>Petit rappel</Card>
           <Card onClick={() => handleCardClick(5)}>CEJM</Card>
           <Card onClick={() => handleCardClick(6)}>Digitalisation</Card>
         </CardsGrid>

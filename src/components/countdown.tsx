@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const TimerContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -20,9 +21,20 @@ const TimerText = styled.text`
   dominant-baseline: middle;
 `;
 
+const NextButton = styled.button<{ color: string }>`
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: ${props => props.color};
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
 const RoundTimer = ({ onEnd }: { onEnd: () => void }) => {
-  const duration = 10;
-  const initialColor = '#00FF00';
+  const duration = 90;
+  const initialColor = '#009000';
   const warningColor = '#FFA500';
   const dangerColor = '#FF0000';
   
@@ -45,9 +57,9 @@ const RoundTimer = ({ onEnd }: { onEnd: () => void }) => {
   }, [onEnd]);
 
   useEffect(() => {
-    if (remainingTime === 5) {
+    if (remainingTime === 60) {
       setColor(warningColor);
-    } else if (remainingTime === 2) {
+    } else if (remainingTime === 30) {
       setColor(dangerColor);
     }
   }, [remainingTime]);
@@ -73,6 +85,9 @@ const RoundTimer = ({ onEnd }: { onEnd: () => void }) => {
           {remainingTime}
         </TimerText>
       </TimerCircle>
+      <NextButton color={color} onClick={onEnd}>
+        Afficher la réponse
+      </NextButton>
     </TimerContainer>
   );
 };
