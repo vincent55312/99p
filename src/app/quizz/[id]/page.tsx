@@ -46,6 +46,9 @@ const Question = styled.li`
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   max-width: 60%;
   text-align: center;
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
 `;
 
 const Loader = styled.div`
